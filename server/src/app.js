@@ -7,7 +7,7 @@ import mysteryRoutes from './routes/mysteryRoutes.js';
 
 const app = express();
 
-app.use(cors({ origin: env.clientUrl }));
+app.use(cors({ origin: env.clientOrigins }));
 app.use(express.json({ limit: '32kb' }));
 app.get('/api', (_request, response) => response.json({ name: 'AI Mystery Room API', version: '1.0.0' }));
 app.use('/api/health', healthRoutes);
